@@ -1,0 +1,39 @@
+class List{
+   constructor() {
+    this.num = [];
+    this.size = this.num.length;
+   }
+   size(){
+    if(this.size == 0){
+      throw new Error('error')
+    }
+    this.num.sort((a, b) => a - b);
+   
+  }
+
+   add(value){
+this.num.push(value);
+this.size = this.num.length;
+this.num.sort((a, b) => a - b);
+
+    }
+  get(e){
+      if(e < 0 || e >= this.num.length){
+        throw new Error('error');
+      }
+      return this.num[e];
+    }
+remove(e){
+        if(e < 0 || e >= this.size){
+           throw new Error('error');
+           }else{
+            this.num.splice(e,1);
+            this.size = this.num.length;
+       }
+}
+}
+
+
+let list = new List();
+list.add(3)
+list.add(2)
